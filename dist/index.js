@@ -15,6 +15,10 @@ function getIdentifier(request, name) {
         return request.params[name];
     }
 
+    if (hasAttribute(request, 'id')) {
+        return request.params.id;
+    }
+
     return false;
 }
 
