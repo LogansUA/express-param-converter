@@ -96,9 +96,9 @@ function modelParamConverter() {
         }).then(function (resource) {
             if (!resource) {
                 if (isOptional) {
-                    throw new Error('Unable to guess how to get a instance from the request information.');
+                    return next(new Error('Unable to guess how to get a instance from the request information.'));
                 } else {
-                    throw new Error(model.toString() + ' not found!');
+                    return next(new Error(model.toString() + ' not found!'));
                 }
             }
 
