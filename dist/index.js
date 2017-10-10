@@ -62,13 +62,7 @@ function findOneBy(model, request, options) {
     }
 
     return new Promise(function (resolve, reject) {
-        return model.findOne({ where: criteria }).then(function (resource) {
-            if (typeof options.plain !== 'undefined' && options.plain === true) {
-                return resolve(resource.get({ plain: true }));
-            }
-
-            return resolve(resource);
-        }, reject);
+        return model.findOne({ where: criteria }).then(resolve, reject);
     });
 }
 
@@ -100,6 +94,10 @@ function modelParamConverter() {
                 } else {
                     return next(new Error(model.toString() + ' not found!'));
                 }
+            }
+
+            if (typeof options.plain !== 'undefined' && options.plain === true) {
+                return resource.get({ plain: true });
             }
 
             return resource;

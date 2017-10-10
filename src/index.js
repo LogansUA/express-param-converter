@@ -51,13 +51,7 @@ function findOneBy(model, request, options) {
     }
 
     return new Promise((resolve, reject) => model.findOne({ where: criteria })
-        .then((resource) => {
-            if (typeof options.plain !== 'undefined' && options.plain === true) {
-                return resolve(resource.get({ plain: true }));
-            }
-
-            return resolve(resource);
-        }, reject));
+        .then(resolve, reject));
 }
 
 function modelParamConverter(parameters = {}) {
@@ -83,6 +77,10 @@ function modelParamConverter(parameters = {}) {
                     } else {
                         return next(new Error(`${model.toString()} not found!`));
                     }
+                }
+
+                if (typeof options.plain !== 'undefined' && options.plain === true) {
+                    return resource.get({ plain: true });
                 }
 
                 return resource;
