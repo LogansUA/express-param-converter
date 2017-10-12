@@ -22,13 +22,7 @@ function find(model, request, options, name) {
     }
 
     return new Promise((resolve, reject) => model.findById(identifier)
-        .then((resource) => {
-            if (typeof options.plain !== 'undefined' && options.plain === true) {
-                return resolve(resource.get({ plain: true }));
-            }
-
-            return resolve(resource);
-        }, reject));
+        .then(resolve, reject));
 }
 
 function findOneBy(model, request, options) {

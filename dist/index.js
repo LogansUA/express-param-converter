@@ -30,13 +30,7 @@ function find(model, request, options, name) {
     }
 
     return new Promise(function (resolve, reject) {
-        return model.findById(identifier).then(function (resource) {
-            if (typeof options.plain !== 'undefined' && options.plain === true) {
-                return resolve(resource.get({ plain: true }));
-            }
-
-            return resolve(resource);
-        }, reject);
+        return model.findById(identifier).then(resolve, reject);
     });
 }
 
