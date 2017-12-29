@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2015",
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": false,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "types": [
+            "node"
+        ]
+    },
+    "exclude": [
+        "dist",
+        "node_modules"
+    ]
+}
