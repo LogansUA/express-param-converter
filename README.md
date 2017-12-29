@@ -24,14 +24,20 @@ var ExpressParamConverter = require('express-param-converter');
 // Sequelize model
 var Blog = require('./models/Blog');
 
-app.get('/blog/:id', [ExpressParamConverter.convert({ name: 'blog', model: Blog })], function (res, req) {
-    // Now you can easily access variables in `res.params`
-    var blog = res.params.blog;
+app.get(
+    '/blog/:id',
+    [
+        ExpressParamConverter.convert({ name: 'blog', model: Blog })
+    ],
+    function (res, req) {
+        // Now you can easily access variables in `res.params`
+        var blog = res.params.blog;
 
-    return req.status(200).json({
-        blog: blog,
-    });
-});
+        return req.status(200).json({
+            blog: blog,
+        });
+    }
+);
 ```
 
 ##### This is how you can use multiple converters in one action:
