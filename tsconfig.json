@@ -8,6 +8,9 @@
         "rootDir": "./src",
         "types": [
             "node"
+        ],
+        "typeRoots": [
+            "types"
         ]
     },
     "exclude": [

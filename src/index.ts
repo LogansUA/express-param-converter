@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { Model, Instance } from 'sequelize';
-import { IOptions, IParameters } from 'express-param-converter';
+import { IOptions, IParameters } from '../types';
 
 class ExpressParamConverter {
     public convert(parameters: IParameters | any = {}) {
