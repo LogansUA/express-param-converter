@@ -104,7 +104,7 @@ app.get(
 
 TODO
 ----
-- [*] Rewrite to typescript
+- [x] Rewrite to typescript
 - [ ] Make it independent from sequelize models
 - [ ] Add additional parameters to options (i.e. `method` etc.)
 
