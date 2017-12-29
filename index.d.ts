@@ -1,20 +1,20 @@
+declare class ExpressParamConverter {
+    convert(parameters: ExpressParamConverter.IParameters | any);
+}
+
 declare namespace ExpressParamConverter {
-    interface IOptions {
+    function convert(parameters: ExpressParamConverter.IParameters | any);
+
+    export interface IOptions {
         mappings: object;
         plain: boolean;
     }
 
-    interface IParameters {
+    export interface IParameters {
         name: string;
         model: any;
         options: IOptions;
     }
-
-    interface ModelParamConverter {
-        modelParamConverter(parameter: IParameters | any);
-    }
 }
-
-declare var ExpressParamConverter: ExpressParamConverter.ModelParamConverter;
 
 export = ExpressParamConverter;
