@@ -45,7 +45,7 @@ app.get(
 var express = require('express');
 var app = express();
 
-var ExpressParamConverter.convert = require('express-param-converter');
+var ExpressParamConverter = require('express-param-converter');
 
 // Sequelize models
 var Blog = require('./models/Blog');
@@ -75,7 +75,7 @@ app.get(
 var express = require('express');
 var app = express();
 
-var ExpressParamConverter.convert = require('express-param-converter');
+var ExpressParamConverter = require('express-param-converter');
 
 // Sequelize models
 var Post = require('./models/Post');
