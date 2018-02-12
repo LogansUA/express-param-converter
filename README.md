@@ -6,7 +6,7 @@ Inspired by [sensio/framework-extra-bundle](https://github.com/sensiolabs/Sensio
 
 Descripton
 ----
-Main goal of this middleware is to convert given parameters in request URL to sequelize model to avoid code duplication of gettings instances from database and throwing not found error.
+Main goal of this middleware is to convert given parameter in request URL, to sequelize instance of given model, for avoiding common code duplication (search instance in database, throw error if not found).
 
 
 Installation
