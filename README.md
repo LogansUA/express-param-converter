@@ -4,11 +4,21 @@
 
 Inspired by [sensio/framework-extra-bundle](https://github.com/sensiolabs/SensioFrameworkExtraBundle) (@ParamConverter)
 
+Descripton
+----
+Main goal of this middleware is to convert given parameters in request URL to sequelize model to avoid code duplication of gettings instances from database and throwing not found error.
+
+
 Installation
 ----
-
+NPM
 ```console
 npm install express-param-converter --save
+```
+
+Yarn
+```
+yarn add express-param-converter
 ```
 
 Usage
